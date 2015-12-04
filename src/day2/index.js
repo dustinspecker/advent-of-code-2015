@@ -18,3 +18,20 @@ export function amountOfGiftWrap(dimensions) {
       Math.min(l * w, l * h, w * h);
   }, 0);
 }
+
+/**
+ * Calculate the amount of ribbon
+ * @param {String[]} dimensions - package dimensions like '2x2x2'
+ * @return {Number} - amount of ribbon needed
+ */
+export function amountOfRibbon(dimensions) {
+  return dimensions.reduce((total, dimension) => {
+    const [l, w, h] = dimension
+      .split('x')
+      .map(n => parseInt(n, 10));
+
+    return total +
+      2 * Math.min(l + w, l + h, w + h) +
+      l * w * h;
+  }, 0);
+}
