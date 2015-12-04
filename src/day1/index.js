@@ -5,7 +5,7 @@
  * @param {String} steps - ( = up ) = down
  * @return {Number} - floor Santa arrived on
  */
-export default function (steps) {
+export function destination(steps) {
   return steps
     .split('')
     .reduce((floor, step) => step === '(' ? ++floor : --floor, 0);
