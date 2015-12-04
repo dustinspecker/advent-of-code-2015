@@ -8,5 +8,5 @@
 export default function (steps) {
   return steps
     .split('')
-    .reduce((floor, step) => step === ')' ? ++floor : --floor, 0);
+    .reduce((floor, step) => step === '(' ? ++floor : --floor, 0);
 }
